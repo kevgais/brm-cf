@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initShipTabs();
     initExpandRows();
     initBookingLookup();
+    initEnrichmentTabs();
 });
 
 /* Generic search/filter for data tables */
@@ -371,6 +372,24 @@ function renderCard(type, status, statusLabel, title, fields, description, url) 
         ${descHtml}
         ${linkHtml}
     </div>`;
+}
+
+/* Enrichment example tab switching */
+function initEnrichmentTabs() {
+    const tabs = document.querySelectorAll('.enrichment-tab');
+    const examples = document.querySelectorAll('.enrichment-example');
+    if (!tabs.length) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const exampleNum = tab.dataset.example;
+            tabs.forEach(t => t.classList.remove('active'));
+            examples.forEach(e => e.classList.remove('active'));
+            tab.classList.add('active');
+            const target = document.getElementById(`example-${exampleNum}`);
+            if (target) target.classList.add('active');
+        });
+    });
 }
 
 /* Smooth scroll for nav links */

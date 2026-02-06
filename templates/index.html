@@ -23,6 +23,7 @@
             <li><a href="#excursions">Excursions</a></li>
             <li><a href="#voyages">Voyages</a></li>
             <li><a href="#locales">Locales</a></li>
+            <li><a href="#enrichment">Enrichment</a></li>
             <li><a href="#gaps">Gaps</a></li>
         </ul>
     </div>
@@ -629,10 +630,303 @@
     </div>
 </section>
 
-<!-- 8. Known Gaps -->
+<!-- 8. Email Enrichment: Before/After -->
+<section class="section" id="enrichment">
+    <div class="container">
+        <div class="section-label">08 / Email Enrichment</div>
+        <h2>Before &amp; After: Real Booking Emails</h2>
+        <p class="section-desc">
+            Real booking patterns from Salesforce Data Cloud (anonymized). What guests get today vs what
+            they could get when CMS content is included. This is the business case for the CF-SFMC data design.
+        </p>
+
+        <!-- Example selector tabs -->
+        <div class="enrichment-tabs">
+            <button class="enrichment-tab active" data-example="1">
+                <span class="tab-flag">UK</span>
+                <span class="tab-label">MS Kong Harald<br><small>11 nights · Full Board</small></span>
+            </button>
+            <button class="enrichment-tab" data-example="2">
+                <span class="tab-flag">US</span>
+                <span class="tab-label">MS Richard With<br><small>6 nights · Full Board</small></span>
+            </button>
+            <button class="enrichment-tab" data-example="3">
+                <span class="tab-flag">DE</span>
+                <span class="tab-label">MS Finnmarken<br><small>14 nights · All-Inclusive</small></span>
+            </button>
+        </div>
+
+        <!-- Example 1: UK Kong Harald -->
+        <div class="enrichment-example active" id="example-1">
+            <div class="enrichment-booking-header">
+                <div class="booking-detail"><strong>Ship:</strong> MS Kong Harald (KH)</div>
+                <div class="booking-detail"><strong>Route:</strong> Bergen → Kirkenes → Bergen</div>
+                <div class="booking-detail"><strong>Duration:</strong> 11 nights</div>
+                <div class="booking-detail"><strong>Cabin:</strong> U2D (Upper Deck Double), P2D (Polar Outside)</div>
+                <div class="booking-detail"><strong>Meal:</strong> Full Board</div>
+                <div class="booking-detail"><strong>Market:</strong> UK</div>
+            </div>
+            <div class="before-after-grid">
+                <div class="before-card">
+                    <div class="ba-label ba-before">Before <span>Salesforce Only</span></div>
+                    <div class="ba-content">
+                        <div class="ba-line"><span class="ba-field">Ship:</span> KH</div>
+                        <div class="ba-line"><span class="ba-field">Route:</span> BGO → BGO</div>
+                        <div class="ba-line"><span class="ba-field">Cabin:</span> U2D, P2D</div>
+                        <div class="ba-line"><span class="ba-field">Meal:</span> Full Board</div>
+                        <div class="ba-line"><span class="ba-field">Extras:</span> Tea & Coffee Package, Unlimited Wi-Fi</div>
+                        <div class="ba-empty">
+                            <div class="ba-empty-icon">×</div>
+                            No ship images<br>
+                            No cabin photos or descriptions<br>
+                            No port content<br>
+                            No meal details<br>
+                            No deck plans<br>
+                            No amenity information
+                        </div>
+                    </div>
+                </div>
+                <div class="after-card">
+                    <div class="ba-label ba-after">After <span>+ Contentful CMS</span></div>
+                    <div class="ba-content">
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">shipPage · code=KH</div>
+                            <div class="ba-enriched-title">Your Voyage on MS Kong Harald</div>
+                            <div class="ba-enriched-detail">Hero image + ship description + "combining classic maritime heritage with modern comfort"</div>
+                        </div>
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">cabin · code=U2D + ship KH</div>
+                            <div class="ba-enriched-title">Upper Deck Double with Window</div>
+                            <div class="ba-enriched-detail">Cabin photo · Deck 6 · 8-12 m² · Ocean view · Double bed · TV, bathroom</div>
+                        </div>
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">cabin · code=P2D + ship KH</div>
+                            <div class="ba-enriched-title">Polar Outside Double</div>
+                            <div class="ba-enriched-detail">Cabin photo · Deck 5 · 10-13 m² · Ocean view · Double bed</div>
+                        </div>
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">portPage · code=BGO</div>
+                            <div class="ba-enriched-title">Departing from Bergen</div>
+                            <div class="ba-enriched-detail">Hero image · "Framed by fjords, alive with colour – Bergen's Bryggen wharf is a UNESCO World Heritage Site"</div>
+                        </div>
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">mealPlan · code=FB</div>
+                            <div class="ba-enriched-title">Your Dining: Full Board</div>
+                            <div class="ba-enriched-detail">Restaurant photo · Breakfast: Scandinavian buffet 07:00-10:00 · Lunch: seasonal coastal 12:00-14:00 · Dinner: three-course or buffet 18:00-20:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example 2: US Richard With -->
+        <div class="enrichment-example" id="example-2">
+            <div class="enrichment-booking-header">
+                <div class="booking-detail"><strong>Ship:</strong> MS Richard With (RW)</div>
+                <div class="booking-detail"><strong>Route:</strong> Tromsø → Bergen (southbound)</div>
+                <div class="booking-detail"><strong>Duration:</strong> 6 nights</div>
+                <div class="booking-detail"><strong>Cabin:</strong> Q4 (Arctic Superior), CUO (Unspecified Outside)</div>
+                <div class="booking-detail"><strong>Meal:</strong> Full Board</div>
+                <div class="booking-detail"><strong>Market:</strong> US</div>
+            </div>
+            <div class="before-after-grid">
+                <div class="before-card">
+                    <div class="ba-label ba-before">Before <span>Salesforce Only</span></div>
+                    <div class="ba-content">
+                        <div class="ba-line"><span class="ba-field">Ship:</span> RW</div>
+                        <div class="ba-line"><span class="ba-field">Route:</span> TOS → BGO</div>
+                        <div class="ba-line"><span class="ba-field">Cabin:</span> Q4, CUO</div>
+                        <div class="ba-line"><span class="ba-field">Meal:</span> Full Board</div>
+                        <div class="ba-line"><span class="ba-field">Extras:</span> Tea & Coffee Package, Unlimited Wi-Fi</div>
+                        <div class="ba-empty">
+                            <div class="ba-empty-icon">×</div>
+                            No ship images<br>
+                            No cabin photos or size info<br>
+                            No port descriptions<br>
+                            No meal details beyond "Full Board"<br>
+                            No amenity list
+                        </div>
+                    </div>
+                </div>
+                <div class="after-card">
+                    <div class="ba-label ba-after">After <span>+ Contentful CMS</span></div>
+                    <div class="ba-content">
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">shipPage · code=RW</div>
+                            <div class="ba-enriched-title">Your Voyage on MS Richard With</div>
+                            <div class="ba-enriched-detail">Hero image + "One of the newest ships on the coastal route, with panoramic lounges and Nordic-inspired dining"</div>
+                        </div>
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">cabin · code=Q4 + ship RW</div>
+                            <div class="ba-enriched-title">Arctic Superior</div>
+                            <div class="ba-enriched-detail">Cabin photo · Deck 6 · 14-17 m² · Panoramic window · Double bed, TV, minibar, sofa, dinner table</div>
+                        </div>
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">portPage · code=TOS</div>
+                            <div class="ba-enriched-title">Departing from Tromsø</div>
+                            <div class="ba-enriched-detail">Hero image · "The Arctic capital, where colourful houses line the harbour and the midnight sun illuminates snow-capped peaks"</div>
+                        </div>
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">portPage · code=BGO</div>
+                            <div class="ba-enriched-title">Arriving in Bergen</div>
+                            <div class="ba-enriched-detail">Hero image · UNESCO World Heritage Bryggen wharf description</div>
+                        </div>
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">mealPlan · code=FB · locale=en-US</div>
+                            <div class="ba-enriched-title">Your Dining: Full Board</div>
+                            <div class="ba-enriched-detail">Restaurant photo · "Full board (breakfast, lunch, & dinner)" — US-specific expanded title with meal descriptions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example 3: German Finnmarken All-Inclusive -->
+        <div class="enrichment-example" id="example-3">
+            <div class="enrichment-booking-header">
+                <div class="booking-detail"><strong>Ship:</strong> MS Finnmarken (SV)</div>
+                <div class="booking-detail"><strong>Route:</strong> Hamburg → Hamburg (round-trip)</div>
+                <div class="booking-detail"><strong>Duration:</strong> 14 nights</div>
+                <div class="booking-detail"><strong>Cabin:</strong> N2 (Suite)</div>
+                <div class="booking-detail"><strong>Meal:</strong> Full Board + All-Inclusive + AIPACK</div>
+                <div class="booking-detail"><strong>Market:</strong> DE</div>
+            </div>
+            <div class="before-after-grid">
+                <div class="before-card">
+                    <div class="ba-label ba-before">Before <span>Salesforce Only</span></div>
+                    <div class="ba-content">
+                        <div class="ba-line"><span class="ba-field">Schiff:</span> SV</div>
+                        <div class="ba-line"><span class="ba-field">Route:</span> HAM → HAM</div>
+                        <div class="ba-line"><span class="ba-field">Kabine:</span> N2</div>
+                        <div class="ba-line"><span class="ba-field">Verpflegung:</span> Full Board</div>
+                        <div class="ba-line ba-problem"><span class="ba-field">Paket:</span> Meal & Beverage Package Norwegian <em>Costal</em> Kitchen</div>
+                        <div class="ba-line"><span class="ba-field">Paket:</span> Meal Beverage Package Expedition</div>
+                        <div class="ba-line"><span class="ba-field">Extras:</span> Onboard Credit 250 EUR, Included Activity Package</div>
+                        <div class="ba-empty">
+                            <div class="ba-empty-icon">×</div>
+                            "Costal" misspelled in SF data<br>
+                            English-only labels for German guest<br>
+                            No restaurant names or drink details<br>
+                            No suite perks explained<br>
+                            No deck plan, no cabin photos
+                        </div>
+                    </div>
+                </div>
+                <div class="after-card">
+                    <div class="ba-label ba-after">After <span>+ Contentful CMS · de-DE</span></div>
+                    <div class="ba-content">
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">shipPage · code=SV · de-DE</div>
+                            <div class="ba-enriched-title">Ihre Reise auf der MS Finnmarken</div>
+                            <div class="ba-enriched-detail">Hero image + German ship description · Ab Hamburg · 14 Nächte · Rundreise Norwegen</div>
+                        </div>
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">cabin · code=N2 + ship SV</div>
+                            <div class="ba-enriched-title">Suite</div>
+                            <div class="ba-enriched-detail">Suite photo · Deck 7 · 22-30 m² · Balkon · Doppelbett, Sofa, Esstisch, TV, Bad</div>
+                        </div>
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">deckPlan · ship SV · deck 7</div>
+                            <div class="ba-enriched-title">Deckplan</div>
+                            <div class="ba-enriched-detail">SVG deck layout showing suite location on Deck 7</div>
+                        </div>
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">mealPlan · code=FB · de-DE</div>
+                            <div class="ba-enriched-title">Vollpension</div>
+                            <div class="ba-enriched-detail">Restaurant photo · Frühstück, Mittag- und Abendessen täglich im Hauptrestaurant</div>
+                        </div>
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">mealPlan · code=AIPNCK · de-DE</div>
+                            <div class="ba-enriched-title">All-inclusive Norwegische Küstenküche</div>
+                            <div class="ba-enriched-detail">Photo · Speisen im Flora und Arran Restaurant · Unbegrenzte ausgewählte Getränke · Suite-Gäste speisen im Rost</div>
+                        </div>
+                        <div class="ba-enriched-block">
+                            <div class="ba-enriched-source">mealPlan · code=AIPACK · de-DE</div>
+                            <div class="ba-enriched-title">All-inclusive</div>
+                            <div class="ba-enriched-detail">Premium food + unlimited selected drinks · German locale with proper descriptions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary table -->
+        <div class="enrichment-summary">
+            <h3>What Changes</h3>
+            <table class="enrichment-table">
+                <thead>
+                    <tr>
+                        <th>Email Element</th>
+                        <th>Before (SF Only)</th>
+                        <th>After (+ Contentful)</th>
+                        <th>CF Source</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ship</td>
+                        <td class="cell-before">Code only ("KH")</td>
+                        <td class="cell-after">Name + hero photo + description</td>
+                        <td><code>shipPage.code</code></td>
+                    </tr>
+                    <tr>
+                        <td>Cabin</td>
+                        <td class="cell-before">Code only ("U2D")</td>
+                        <td class="cell-after">Name + photo + size + amenity icons</td>
+                        <td><code>cabin.code</code></td>
+                    </tr>
+                    <tr>
+                        <td>Port</td>
+                        <td class="cell-before">Code only ("BGO")</td>
+                        <td class="cell-after">Name + hero image + marketing copy</td>
+                        <td><code>portPage.code</code></td>
+                    </tr>
+                    <tr>
+                        <td>Meal plan</td>
+                        <td class="cell-before">Short label, sometimes misspelled</td>
+                        <td class="cell-after">Rich descriptions, serving times, menus, photos</td>
+                        <td><code>mealPlan.code</code></td>
+                    </tr>
+                    <tr>
+                        <td>All-inclusive</td>
+                        <td class="cell-before">Vague English text</td>
+                        <td class="cell-after">Restaurant names, drink policy, suite perks</td>
+                        <td><code>mealPlan.code</code></td>
+                    </tr>
+                    <tr>
+                        <td>Deck plan</td>
+                        <td class="cell-before">Nothing</td>
+                        <td class="cell-after">SVG deck layout showing cabin location</td>
+                        <td><code>deckPlan</code></td>
+                    </tr>
+                    <tr>
+                        <td>Amenities</td>
+                        <td class="cell-before">Nothing</td>
+                        <td class="cell-after">Bed type, window, facilities with icons</td>
+                        <td><code>facility</code></td>
+                    </tr>
+                    <tr>
+                        <td>Language</td>
+                        <td class="cell-before">English labels only</td>
+                        <td class="cell-after">10 locales (DE, FR, NO, DK, SE, AU, US, AT, CH)</td>
+                        <td>All types</td>
+                    </tr>
+                    <tr>
+                        <td>Images</td>
+                        <td class="cell-before">Zero</td>
+                        <td class="cell-after">Hero images for ship, cabin, ports, dining</td>
+                        <td>All types</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- 9. Known Gaps -->
 <section class="section" id="gaps">
     <div class="container">
-        <div class="section-label">08 / Known Gaps</div>
+        <div class="section-label">09 / Known Gaps</div>
         <h2>Integration Gotchas</h2>
         <p class="section-desc">
             These are the things that will trip you up when connecting Data Cloud bookings to Contentful content.
