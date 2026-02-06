@@ -200,17 +200,23 @@ function initBookingLookup() {
         if (cabinCategory && ship) {
             // Booking cabin_category (e.g. "K3") matches Contentful cabin_code, not cabin_category
             // Contentful cabin_category is a name like "Polar Inside"
+            // Ship alias: MS Maud (MS) uses same cabins as MS Midnatsol (WW) - same ship, renamed
+            const SHIP_CABIN_ALIAS = { 'MS': 'WW' };
+            const cabinShipCode = SHIP_CABIN_ALIAS[shipCode] || shipCode;
             const matchingCabins = data.cabins.filter(c =>
-                c.ship_brm_code === shipCode && c.cabin_code === cabinCategory
+                c.ship_brm_code === cabinShipCode && c.cabin_code === cabinCategory
             );
             if (matchingCabins.length > 0) {
                 const cabin = matchingCabins[0];
+                const aliasNote = cabinShipCode !== shipCode
+                    ? ` (via ${cabin.ship_name} - same ship, renamed)`
+                    : '';
                 cards.push(renderCard('Cabin', 'found', 'Content Available',
                     cabin.cabin_name, [
                         ['Booking Code', cabinCategory, true],
                         ['Contentful Code', cabin.cabin_code, true],
                         ['Category', cabin.cabin_category],
-                        ['Ship', cabin.ship_name],
+                        ['Ship', cabin.ship_name + aliasNote],
                         ['Bed Type', cabin.bed_type],
                         ['Window', cabin.window_type],
                         ['Size', `${cabin.size_from}${cabin.size_to && cabin.size_to !== cabin.size_from ? '-' + cabin.size_to : ''} m\u00B2`],

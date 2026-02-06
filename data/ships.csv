@@ -1,6 +1,6 @@
 brm_code,ship_name,contentful_id,slug,has_contentful_content
 KH,MS Kong Harald,ship_KH,ms-kong-harald,True
-MS,MS Maud,,ms-maud,False
+MS,MS Maud,ship_WW,ms-maud,True
 NK,MS Nordkapp,ship_NK,ms-nordkapp,True
 NL,MS Nordlys,ship_NL,ms-nordlys,True
 NN,MS Nordnorge,ship_NN,ms-nordnorge,True
