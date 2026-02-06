@@ -174,6 +174,7 @@ function initBookingLookup() {
         const ship = data.ships.find(s => s.brm_code === shipCode);
         if (ship) {
             const hasContent = ship.has_contentful_content === 'True';
+            const shipUrl = ship.slug ? `https://www.hurtigruten.com/en/ships/${ship.slug}` : null;
             cards.push(renderCard('Ship', hasContent ? 'found' : 'warning',
                 hasContent ? 'Content Available' : 'No CMS Content',
                 ship.ship_name, [
@@ -184,7 +185,8 @@ function initBookingLookup() {
                 ],
                 hasContent
                     ? `Ship page exists in Contentful. Use slug "${ship.slug}" or ID "${ship.contentful_id}" to fetch content.`
-                    : 'This ship has no content in Contentful. Travel documents will be missing ship details.'
+                    : 'This ship has no content in Contentful. Travel documents will be missing ship details.',
+                shipUrl
             ));
         } else {
             cards.push(renderCard('Ship', 'not-found', 'No Match',
@@ -239,25 +241,35 @@ function initBookingLookup() {
         }
 
         for (const { code, label } of portCodes) {
-            // Ports in Contentful have no 3-letter codes - try name matching
-            const portMatch = data.ports.find(p =>
-                p.port_name.toLowerCase().includes(codeToPortName(code).toLowerCase())
-            );
+            // First try matching by port_code field, then fall back to name heuristic
+            let portMatch = data.ports.find(p => p.port_code === code);
+            if (!portMatch) {
+                portMatch = data.ports.find(p =>
+                    p.port_name.toLowerCase().includes(codeToPortName(code).toLowerCase())
+                );
+            }
             if (portMatch) {
-                cards.push(renderCard(label, 'found', 'Likely Match',
+                const portUrl = portMatch.slug ? `https://www.hurtigruten.com/en/ports/${portMatch.slug}` : null;
+                const matchType = portMatch.port_code === code ? 'Exact Match' : 'Likely Match';
+                cards.push(renderCard(label, 'found', matchType,
                     portMatch.port_name, [
                         ['Booking Code', code, true],
+                        ['Port Code', portMatch.port_code || '---', true],
                         ['Port Name', portMatch.port_name],
+                        ['Slug', portMatch.slug || '---', true],
                         ['Contentful ID', portMatch.contentful_id, true],
                     ],
-                    'Matched by name heuristic. Contentful has no 3-letter port codes - a proper mapping table is needed for production use.'
+                    portMatch.port_code === code
+                        ? `Port code "${code}" matched directly to Contentful port "${portMatch.port_name}".`
+                        : 'Matched by name heuristic. Verify this is the correct port.',
+                    portUrl
                 ));
             } else {
                 cards.push(renderCard(label, 'warning', 'No Direct Match',
                     `Code: ${code}`, [
                         ['Booking Code', code, true],
                     ],
-                    `Booking uses port code "${code}" but Contentful has no port code field. A mapping table (e.g. BGO → Bergen) is needed to link booking ports to Contentful port pages.`
+                    `No Contentful port found for code "${code}". A mapping may be needed.`
                 ));
             }
         }
@@ -331,7 +343,7 @@ function codeToPortName(code) {
     return map[code] || code;
 }
 
-function renderCard(type, status, statusLabel, title, fields, description) {
+function renderCard(type, status, statusLabel, title, fields, description, url) {
     const statusClass = status === 'found' ? 'match' : status === 'not-found' ? 'no-match' : 'partial';
     let fieldsHtml = '';
     if (fields.length) {
@@ -342,6 +354,7 @@ function renderCard(type, status, statusLabel, title, fields, description) {
         fieldsHtml += '</div>';
     }
     const descHtml = description ? `<div class="result-desc">${description}</div>` : '';
+    const linkHtml = url ? `<a href="${url}" target="_blank" class="result-link">View on hurtigruten.com</a>` : '';
     return `<div class="lookup-result-card ${status}">
         <div class="result-header">
             <span class="result-type">${type}</span>
@@ -350,6 +363,7 @@ function renderCard(type, status, statusLabel, title, fields, description) {
         <div class="result-title">${title}</div>
         ${fieldsHtml}
         ${descHtml}
+        ${linkHtml}
     </div>`;
 }
 

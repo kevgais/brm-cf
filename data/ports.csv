@@ -1,39 +1,83 @@
-port_code,port_name,contentful_id
-,Alta,1Hvz2e99MRoJTfC9Kqc4dA
-,Bergen,V7jivroMqZ2leVEsv6y85
-,Bessaker,6ocyU436r9Ijzx3qRzTVgI
-,Bodø,5oEyhsU6voLfoTa56cF5q5
-,Brønnøysund,6QGQoapnGafDdlqEQSHPZx
-,Flåm,2TKlEEnRcpOiwt3uxIhjWF
-,Hammerfest,2gmGlP87D3NwFWaCTYrmT1
-,Harstad,42CxB53d4cuP6wZpD178nf
-,Haugesund,4JZxQo3747Vf3HtptTAzUp
-,Honningsvåg,5UEfxxUI5rJ0d200Q9VJbk
-,Karmøy,7j04ECfAR0L3ejAjeK3j9H
-,Kirkenes,bTb9oEf4AFDKbPsxGiGUM
-,Kjøllefjord,1nxn8L0W5qzQWZcQ5Sl8G7
-,Kristiansand,6P2CcvUCeB0f3KeUFSVUYm
-,Kristiansund,68XLSaJ4ez9ZcNdbVLKazf
-,Loen,4Tjn8GyNeV2f2GiHTglkTV
-,Longyearbyen,28PKxzEDk8r83tscSRPsn1
-,Mehamn,47tRR0j0hSQGMNPJaWJLOr
-,Molde,2v7lKBPnG7IUnSsCsByBOb
-,Narvik,73maIMBwCsqPfDuuCWGoS0
-,Oslo,79hSSRM4mVxJPmHxPy9oCu
-,Reine,2T1LqdIZO07zfaOrnB8Sme
-,Rørvik,la4spPQCNCpKOjIbPWESX
-,Sandnessjøen,tDgKhBYJP8VnmBKY4Tjss
-,Senja,5y63MMd13Dj47nUz6KcWLp
-,Sortland,1PuJ4eNKU0xbEwV44SdUCN
-,Stamsund,1vfum4eR3o6IoF9StOWhR5
-,Stavanger,7xogKBoPryGQIZNa3ZwhGq
-,Stokmarknes,24meoLUF02BVSvLPinWazF
-,Svolvær,1AtO2J21QQZKMX2ykjc7Ff
-,The Geirangerfjord,5aR6u6ETQ09IzsohbnK64E
-,The Hjørundfjord,6G3UHRbqxmFXRRWHnOeuG6
-,Tromsø,5aAsLqzPjneDqFObFniI7d
-,Trondheim,3AEur9AgjD5q5BFsJfnh9a
-,Træna,6XbymUoVAbr8hNh1P9DGUA
-,Ålesund,6b0b0JXDBrWqX5ndBsKmla
-,Åndalsnes,79k1jZnkg0G9NrB1DkwXic
-,Ørnes,6cWkfY4o7o1CiwASieXqw5
+port_code,port_name,contentful_id,slug
+,North Sea crossing,5sO07muwDHtkq5OPdpJ9JM,port-page-north-sea-crossing
+,Sailing day,6l0Idfb72AtpTyNu1PZINu,sailing-day
+,Copenhagen,5pztUgxTxBqAiNyB0gDmdt,copenhagen
+,Nordfjord,3x6QxPN82JciSY3YBCi4Qb,port-nordfjord
+,Sognefjord,i7lKNpqHwVJoap7hmtJQv,port-sognefjord
+,Kvinnheradsfjord,5v2cABJuN7Pp8AKx1oJYGm,port-kvinnheradsfjord
+SRD,Sortland,1PuJ4eNKU0xbEwV44SdUCN,sortland-old
+KEL,Kiel,5OMlY0JHM1ETirRVXP8Lmu,port-page-kiel
+KEM,Kemi,GwJP2uRto1WxpLvvzP0e2,port-page-kemi
+RKV,Reykjavík,6Z5LbA3CIy18IuXe8IYIJ9,port-page-reykjavik
+EFEK,Kilpisjärvi,3DIVCCBgk8Fn9ORxtoB0Bi,port-page-kilpisjaervi
+SEL,Selfoss,4oMHH0WZLrWfMT8YeeyoPb,port-page-selfoss
+LTT,Levi,6jPyIDvHAmxuU8kxhN5GlZ,port-page-levi
+BIVI,Vik,2gzMiPkW2gBWGgapaQUy0y,port-page-vik
+GEV,Koltavuoma,6TgMoevssiKVBdDlWUslgt,port-page-koltavuoma
+BSK,Bessaker,6ocyU436r9Ijzx3qRzTVgI,port-page-bessaker
+SRY,Skjervøy,6dyGfU0AgeTmhUuHQfISPv,skjervoy
+HVG,Honningsvåg,5UEfxxUI5rJ0d200Q9VJbk,honningsvag
+TOS,Tromsø,5aAsLqzPjneDqFObFniI7d,tromso
+BOO,Bodø,5oEyhsU6voLfoTa56cF5q5,bodo
+BGO,Bergen,V7jivroMqZ2leVEsv6y85,bergen
+AES,Ålesund,6b0b0JXDBrWqX5ndBsKmla,alesund
+GEI,The Geirangerfjord,5aR6u6ETQ09IzsohbnK64E,the-geirangerfjord
+,Barents Sea,U2iyx3ikFYRjbM92d02C2,barents-sea
+HJF,The Hjørundfjord,6G3UHRbqxmFXRRWHnOeuG6,hjorundfjord
+TR2,Torsken,5U6wbOyPDpzBZ40wrrKnh9,torsken
+WFJ,"Woodfjord, Svalbard",6h3Q4juuQkWWr0v53T3aZF,woodfjord-liefdefjord-moffen-and-80-north
+TRD,Trondheim,3AEur9AgjD5q5BFsJfnh9a,trondheim
+SVG,Stavanger ,7xogKBoPryGQIZNa3ZwhGq,stavanger
+KMY,Karmøy,7j04ECfAR0L3ejAjeK3j9H,port-page-karmoy
+HAM,Hamburg,4M6uT2IMV8fZLBUJ1RgKGb,port-page-hamburg
+BJF,Båtsfjord,45CAD1sjSs9nsDhnOae55R,batsfjord
+MAL,Måløy,2L1cf3jPjPPKA7LD47ukyA,maloy
+VRD,Vardø,1Go8DVDbKxvmploGDAobCo,vardo
+FRO,Florø,ukzCTrn8pLUmkhRny6JO2,floro
+TVK,Torvik,3JigpvaZ7HIoWVTQU6vPWx,torvik
+MOL,Molde,2v7lKBPnG7IUnSsCsByBOb,molde
+RVK,Rørvik,la4spPQCNCpKOjIbPWESX,rorvik
+NES,Nesna,1QOAEvoQwQEILVyKDLHj9G,nesna
+KSU,Kristiansund,68XLSaJ4ez9ZcNdbVLKazf,kristiansund
+BNN,Brønnøysund,6QGQoapnGafDdlqEQSHPZx,bronnoysund
+SKN,Stokmarknes,24meoLUF02BVSvLPinWazF,stokmarknes
+STU,Stamsund,1vfum4eR3o6IoF9StOWhR5,stamsund
+SVJ,Svolvær,1AtO2J21QQZKMX2ykjc7Ff,svolvaer
+ORS,Ørnes,6cWkfY4o7o1CiwASieXqw5,ornes
+OKD,Øksfjord,7f0jOJJtlB8nEHFo1cvFkc,oksfjord
+FNS,Finnsnes,5t4JkRCP4nXYXVYiz0QOlp,finnsnes
+HRD,Harstad,42CxB53d4cuP6wZpD178nf,harstad
+RIN,Risøyhamn,5OPGMfaTRdH9d4GGZnn9Pl,risoyhamn
+MEH,Mehamn,47tRR0j0hSQGMNPJaWJLOr,mehamn
+HFT,Hammerfest,2gmGlP87D3NwFWaCTYrmT1,hammerfest
+KJD,Kjøllefjord,1nxn8L0W5qzQWZcQ5Sl8G7,kjollefjord
+HVS,Havøysund,5RcpSkpArWI41YszH2UlgS,havoysund
+BVG,Berlevåg,1ydyHjZXUJ0pI7bsM4qACy,berlevag
+KRS,Kristiansand,6P2CcvUCeB0f3KeUFSVUYm,kristiansand
+VDS,Vadsø,2JFbbPPnxDecAmfP9QsI9y,vadso
+KKN,Kirkenes,bTb9oEf4AFDKbPsxGiGUM,kirkenes
+LYR,Longyearbyen,28PKxzEDk8r83tscSRPsn1,longyearbyen
+NYA,Ny-Ålesund,1DYbb8hh2IY1w0ivIdysnU,ny-alesund
+Saariselkä,Saariselkä,24GAcRHREYOOEU7KD7IQnN,saariselka
+HAU,Haugesund,4JZxQo3747Vf3HtptTAzUp,haugesund
+NVK,Narvik,73maIMBwCsqPfDuuCWGoS0,narvik
+HFJ,Hardangerfjord,18ZV1JZxEtBYRcucvIEt8F,hardangerfjord
+AND,Åndalsnes,79k1jZnkg0G9NrB1DkwXic,andalsnes
+Sinettä,Sinettä,5MgkkjqO3Cmmy05Jr2Zt1d,sinetta
+HEL,Helsinki,293sxvn2UiWVcbVrAGACU9,helsinki
+LOD,Lødingen,73IMLnNfHJBY4M4M1JWVHT,lodingen
+ALF,Alta,1Hvz2e99MRoJTfC9Kqc4dA,alta
+TLL,Tallinn,1rZ7TBxto3uHhVZXVagQCB,tallinn
+Rovaniemi,Rovaniemi,6e4enoHnHYl4QyFTwAcWv9,rovaniemi
+FLM,Flåm,2TKlEEnRcpOiwt3uxIhjWF,flam
+Voss,Voss,4PIONJF8aPpPoea4f4WeQj,voss
+STO,Stockholm,41qM4r8gvCLqcAKdGmRZu6,stockholm
+TRÆ,Træna,6XbymUoVAbr8hNh1P9DGUA,port-traena
+SJA,Senja,5y63MMd13Dj47nUz6KcWLp,senja
+LYR,Longyearbyen and Isfjord,5D8UTfpTNRZBO5XnPl4QLu,longyearbyen-and-isfjord
+R1N,Reine,2T1LqdIZO07zfaOrnB8Sme,reine
+MGD,Magdalenefjord and the North West Corner,C7qJXRrulMekhQ0rpJaBX,magdalenefjord-and-the-north-west-corner
+LOE,Loen,4Tjn8GyNeV2f2GiHTglkTV,port-page-loen
+KFJ,"Kongsfjorden, Svalbard",6gaTbpZ1jj87VEFftDzQcd,kongsfjorden
+SSJ,Sandnessjøen,tDgKhBYJP8VnmBKY4Tjss,port-sandnessjoen
+OSL,Oslo,79hSSRM4mVxJPmHxPy9oCu,oslo
