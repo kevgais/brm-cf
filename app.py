@@ -25,6 +25,7 @@ excursions = load_csv("excursions.csv")
 ports = load_csv("ports.csv")
 voyage_products = load_csv("voyage_products.csv")
 locales = load_csv("locales.csv")
+bookings = load_csv("bookings.csv")
 
 # Build summary stats
 stats = {
@@ -62,12 +63,14 @@ def index():
         voyage_products=voyage_products,
         locales=locales,
         stats=stats,
+        bookings=bookings,
         ships_json=json.dumps(ships),
         cabins_json=json.dumps(cabins),
         excursions_json=json.dumps(excursions),
         ports_json=json.dumps(ports),
         voyage_products_json=json.dumps(voyage_products),
         locales_json=json.dumps(locales),
+        bookings_json=json.dumps(bookings),
     )
 
 
