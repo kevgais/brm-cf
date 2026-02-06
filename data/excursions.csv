@@ -1,0 +1,161 @@
+booking_code,title,type,price,currency,duration,difficulty_level,categories,is_included,guest_favourite
+CENBGO03,Island Seafood Dinner & Boat Trip from Bergen,Pre-Post-programme,1866,EUR,5 hours,Level 1: Easy - suitable for most people added,Food,False,False
+CENBGO05,Fjord Cruise to Mostraumen,Pre-programme,944,NOK,"3-3,5 h",,None,False,False
+CENOSL01,Oslo Panorama Tour – Bus Sightseeing,Pre-Post-programme,647,NOK,3h,,None,False,False
+CENOSL02,Oslo Discovery Tour – Bus Sightseeing,Pre-programme,1125,NOK,"5,5h",,None,False,False
+E-GEI2,Geiranger - Guided E-Bike Tour (OLD),Excursion,,EUR,3hrs,Level 3: Active - good mobility needed,None,False,False
+E-NFJ1,Loen - Snowshoe Hiking,Excursion,890,EUR,4hrs,Level 3: Active - good mobility needed,None,False,False
+E-SVG4,Stavanger - Viking Life (OLD),Excursion,1507,EUR,2h30,Level 2: Moderate - some mobility needed,Culture,False,False
+E-TOS15,Explore Tromsø by E-Bike ,Excursion,1112,EUR,3hrs,Level 3: Active - good mobility needed,None,False,False
+"E1452KL2OBBAL, CENSINBB24, SINBO1452SU",Sognefjord in a Nutshell | 2 days,Pre-Post-programme,5000,EUR,2 days,Level 1: Easy - suitable for most people added,Nature,False,False
+"E1454KL2,SINBB1454SU",Sognefjord in a Nutshell  | 1 day,Pre-Post-programme,2476,EUR,10 hours,Level 1: Easy - suitable for most people,Nature,False,False
+HR-AES2B,Geiranger With Trollstigen Pass,Excursion,2990,EUR,8 hours,Level 1: Easy - suitable for most people,Nature,False,False
+HR-AES2C,Art Nouveau Walk (Winter),Excursion,990,EUR,2 hours,Level 2: Moderate - some mobility needed,Culture,False,False
+HR-AES2D,Atlanterhavsparken Aquarium and Ålesund,Excursion,990,EUR,2 hours,Level 2: Moderate - some mobility needed,Nature,False,False
+HR-AES2E,Art Nouveau Walk (Spring & Autumn),Excursion,690,EUR,1 hour 30 minutes,Level 2: Moderate - some mobility needed,Culture,False,False
+HR-AES2K,Kayaking in Ålesund,Excursion,1190,EUR,2 hours 15 minutes,Level 4: Challenging - good mobility and fitness needed,Active,False,False
+HR-AES2L,Alnes Lighthouse,Excursion,1490,EUR,3 hours 30 minutes,Level 1: Easy - suitable for most people,Nature,False,False
+HR-AES2O,Hjørundfjord - tastes and traditions,Excursion,2490,EUR,6 hours 30 minutes,Level 1: Easy - suitable for most people,Nature,False,False
+HR-AES2S,Silent Hjørundfjord,Excursion,1990,NOK,7h,,None,False,False
+HR-BNN10C,Visit the Salmon,Excursion,1390,EUR,2 hours 30 minutes,Level 2: Moderate - some mobility needed,Culture,False,False
+HR-BNN10D,Hike to Torghatten Mountain,Excursion,1490,EUR,2 hours,Level 4: Challenging - good mobility and fitness needed,Active,False,False
+HR-BNN10F,Sea Adventure by RIB (utgår etter sommer 25),Excursion,1790,EUR,2 hours 30 minutes,Level 3: Active - good mobility needed,Active,False,False
+HR-BOO4B,Arctic Coastal Walk,Excursion,1090,EUR,2 hours 10 minutes,Level 3: Active - good mobility needed,Active,False,False
+HR-BOO4C,Experience Bodø and Saltstraumen,Excursion,1090,EUR,2 hours 10 minutes,Level 2: Moderate - some mobility needed,Nature,False,False
+HR-BOO4D,RIB Safari To Saltstraumen,Excursion,1790,EUR,2 hours,Level 3: Active - good mobility needed,Nature,False,False
+HR-BOO4L,Sámi Adventure,Excursion,1690,NOK,1h 45min,,Culture,False,False
+HR-HFT8B,The Northernmost Town In The World,Excursion,1190,EUR,1 hour 45 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HR-HFT8G,Mountain Hike In Hammerfest,Excursion,1090,EUR,1 hour 30 minutes,Level 4: Challenging - good mobility and fitness needed,Active|Nature,False,False
+HR-HJF2F,A Taste of Norway,Excursion,1390,EUR,2 hours 15 minutes,Level 1: Easy - suitable for most people,Nature,False,False
+HR-HJF2G,Mountain Hike in the Hjørundfjord,Excursion,1290,EUR,2 hours 45 minutes,Level 4: Challenging - good mobility and fitness needed,Active,False,False
+HR-HJF2H,Hike with a Visit to a Shieling,Excursion,1290,EUR,2 hours 45 minutes,Level 3: Active - good mobility needed,Active|Nature,False,False
+HR-HJF2J,"Hjørundfjord, Geiranger, and Ålesund",Excursion,2790,EUR,6 hours 30 minutes,Level 1: Easy - suitable for most people,Nature,False,False
+HR-HJF2U,E-Bike Tour in Hjørundfjorden,Excursion,1590,,3 hours,,Active,False,False
+HR-HRD9A,A Taste of Vesterålen,Excursion,1490,EUR,4 hours 15 minutes,Level 1: Easy - suitable for most people,Nature,False,False
+HR-HVG6A,The North Cape (Original),Excursion,1790,EUR,3 hours,Level 1: Easy - suitable for most people,Nature,False,False
+HR-HVG6B,Birdwatching Safari,Excursion,2290,EUR,3 hours,Level 2: Moderate - some mobility needed,Nature,False,False
+HR-HVG6H,Fishing Village Visit,Excursion,1390,EUR,3 hours,Level 2: Moderate - some mobility needed,Culture,False,False
+HR-HVG8A,Breakfast at the North Cape,Excursion,2350,EUR,6 hours,Level 1: Easy - suitable for most people,Food,False,False
+HR-KJD6C,Sámi Culture,Excursion,1350,EUR,2 hours 30 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HR-KJD6D,Snowmobile Trip In The Arctic,Excursion,3890,EUR,2 hours 30 minutes,Level 3: Active - good mobility needed,Active,False,False
+HR-KKN7A,The Norwegian Border,Excursion,1350,EUR,3 hours,Level 1: Easy - suitable for most people,Culture,False,False
+HR-KKN7B,Riverboat to the Norwegian Border,Excursion,1690,EUR,2 hours 30 minutes,Level 2: Moderate - some mobility needed,Culture,False,False
+HR-KKN7C,Snowmobile Safari,Excursion,2490,EUR,2 hours 30 minutes,Level 3: Active - good mobility needed,Active,False,False
+HR-KKN7D,Kirkenes Snowhotel,Excursion,1390,EUR,3 hours ,Level 2: Moderate - some mobility needed,None,False,False
+HR-KKN7E,ATV/Quad-safari to the Norwegian border (Kirkenes),Excursion,1890,EUR,2 hours 30 minutes,Level 4: Challenging - good mobility and fitness needed,Active,False,False
+HR-KKN7F,Husky Tour,Excursion,2990,EUR,3 hours,Level 3: Active - good mobility needed,Nature,False,False
+HR-KKN7H,King Crab Adventure (Summer),Excursion,2490,EUR,3 hours,Level 1: Easy - suitable for most people,Food,False,False
+HR-KKN7M,King Crab Adventure (Winter),Excursion,2790,EUR,3 hours,Level 1: Easy - suitable for most people,Food,False,False
+HR-KSU11C,The Atlantic Road (Original),Excursion,1790,EUR,4 hours 30 minutes,Level 1: Easy - suitable for most people,Nature,False,False
+HR-KSU11E,Bergtatt – Magnificent Marble Mine,Excursion,1890,EUR,4 hours 30 minutes,Level 2: Moderate - some mobility needed,Nature,False,False
+HR-MEH8F,Snowmobile Trip in the Polar Night,Excursion,3990,EUR,2 hours 15 minutes,Level 3: Active - good mobility needed,Active,False,False
+HR-ORS4A,Svartisen Glacier,Excursion,2990,EUR,5 hours ,Level 2: Moderate - some mobility needed,Nature,False,False
+HR-SKN9C,Sea Eagle Safari,Excursion,1890,EUR,2 hours,Level 2: Moderate - some mobility needed,Nature,False,False
+HR-SRD9K,The Hurtigruten Museum,Excursion,1290,EUR,2 hours 15 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HR-SSJ10B,UNESCO Vega Archipelago,Excursion,3690,EUR,5 hours ,Level 1: Easy - suitable for most people,Nature,False,False
+HR-STU4E,Meet the Vikings (Winter),Excursion,1990,EUR,2 hours 30 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HR-STU4F,Meet the Vikings (Summer),Excursion,1990,EUR,2 hours 30 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HR-STU4G,Highlights of Lofoten,Excursion,1390,EUR,2 hours 40 min,Level 1: Easy - suitable for most people,Culture,False,False
+HR-STU4I,Farm Visit in Lofoten,Excursion,1590,EUR,2 hours 40 min,Level 2: Moderate - some mobility needed,Food,False,False
+HR-SVJ9B,Lofoten Islands,Excursion,1390,EUR,3 hours 30 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HR-SVJ9D,Lofoten by Horse,Excursion,2490,EUR,3 hours 30 minutes,Level 3: Active - good mobility needed,Active,False,False
+HR-SVJ9E,RIB Adventure in Lofoten,Excursion,1790,EUR,1 hour 30 minutes,Level 3: Active - good mobility needed,Nature,False,False
+HR-SVJ9H,Lofotpils Brewery,Excursion,550,EUR,40 minutes,Level 2: Moderate - some mobility needed,Food,False,False
+HR-TOS5A,The Arctic Capital Tromsø,Excursion,1690,EUR,3 hours 30 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HR-TOS5B,Dog Sledding (Tromsø),Excursion,3090,EUR,3 hours 30 minutes,Level 3: Active - good mobility needed,Nature,False,False
+HR-TOS5D,Polar History Walk,Excursion,1090,EUR,2 hours 30 minutes,Level 2: Moderate - some mobility needed,Culture,False,False
+HR-TOS5M,Cross-Country Skiing,Excursion,1790,EUR,3 hours,Level 3: Active - good mobility needed,Active,False,False
+HR-TOS5N,Snowshoeing In Tromsø,Excursion,1790,EUR, 3 hours,Level 4: Challenging - good mobility and fitness needed,Active,False,False
+HR-TOS8C,Midnight Concert in the Wooden Cathedral,Excursion,590,EUR,1 hour 15 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HR-TRD11A,Trondheim With Nidaros Cathedral,Excursion,1090,EUR,2 hours,Level 1: Easy - suitable for most people,Culture,False,False
+HR-TRD3A,Nidaros Cathedral & Ringve Museum,Excursion,1190,EUR,3 hours,Level 2: Moderate - some mobility needed,Culture,False,False
+HR-TRD3B,Trondheim with Nidaros Cathedral,Excursion,1090,EUR,2 hours,Level 1: Easy - suitable for most people,Culture,False,False
+HR-TRD3D,Trondheim City Walk,Excursion,790,EUR,3 hours,Level 3: Active - good mobility needed,Culture,False,False
+HR-TRD3G,Kayaking on the River Nid,Excursion,1490,EUR,2 hours 30 minutes,Level 4: Challenging - good mobility and fitness needed,Active,False,False
+HR-TRD3H,Cycling In Trondheim,Excursion,890,EUR,2 hours 45 minutes,Level 3: Active - good mobility needed,Active,False,False
+"HRI-BNN13B,HRS-BNN2",Brønnøysund by Bike,Excursion,1090,EUR,2 hours 30 minutes,Level 2: Moderate - some mobility needed,Active,False,False
+HRS-AES1,Mountain Peaks & Fjords - A Scenic Bus Tour,Excursion,1990,EUR,6 hours,Level 1: Easy - suitable for most people,Nature,False,False
+HRS-AES2,Ålesund on Foot,Excursion,790,EUR,1 hours 30 minutes ,,Active,False,False
+HRS-AES3,Saga Islands Bus Tour to Alnes - Winter,Excursion,1790,EUR,3 hours,Level 1: Easy - suitable for most people,Nature,False,False
+HRS-AES4,Ålesund walk and beer tasting,Excursion,1290,EUR,2 hours 15 minutes,Level 2: Moderate - some mobility needed,Culture,False,False
+HRS-ALF1,Dog Sledding in Alta,Excursion,3390,EUR,2 hours 30 minutes,Level 3: Active - good mobility needed,Active,False,False
+HRS-ALF2,Dog Sledding on Wheels in Alta,Excursion,3390,EUR,2 hours 15 minutes,Level 3: Active - good mobility needed,Active,False,False
+HRS-ALF5,Visit The Magical Igloo Hotel in Alta,Excursion,1390,EUR,2 hours 30 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HRS-ALF6,UNESCO Rock Art & Northern Lights Cathedral,Excursion,1690,EUR,3 hours,Level 1: Easy - suitable for most people,Nature,False,False
+HRS-AND1,Åndalsnes Town Walk and Romsdal Gondola,Excursion,1790,EUR,2 hours 30 minutes ,,None,False,False
+HRS-AND2,Hairpin Bends & Soaring Mountains - Trollstigen Scenic Bus Tour,Excursion,1990,EUR,3 hours,Level 1: Easy - suitable for most people,Nature,False,False
+HRS-AND3,Stand-Up Paddle Board in Åndalsnes,Excursion,1790,EUR,4 hours,Level 3: Active - good mobility needed,Active,False,False
+HRS-AND4,The Golden Train (summer),Excursion,1190,EUR,2 hours 30 minutes,,None,False,False
+HRS-AND5,The Golden Train - Winter,Excursion,650,NOK,2 hours 40 minutes,,None,False,False
+HRS-BG02,Discover Bergen by E-Bus,Excursion,1026,NOK,2 hours,,None,False,False
+HRS-BGO1,Bergen City Walk,Excursion,790,EUR,2hrs30,Level 3: Active - good mobility needed,None,False,False
+HRS-BGO3,Heritage & Highlights - The best of Bergen,Excursion,1948,,,,None,False,False
+HRS-BNN1,Legends of Torghatten and Brønnøysund - Summer,Excursion,1690,EUR,2 hours 30 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HRS-BNN4,Torghatten Mountain Hike,Excursion,1590,EUR,2 hours 40 minutes,Level 4: Challenging - good mobility and fitness needed,Active,False,False
+HRS-BSK1,Journey to Roan and organic farm visit,Excursion,1990,NOK,4 hours 30 minutes,,None,False,False
+HRS-BSK2,Nostalgic cutter fishing boat trip,Excursion,2294,NOK,3 hours,,None,False,False
+HRS-BSK3,E-bike tour to Møllerhytta,Excursion,1718,,3h,,None,False,False
+HRS-BSK4,Hike to Storskardheia mountain,Excursion,1141,,3 hours,,Active|Nature,False,False
+HRS-BSK5,Traditional Norwegian forest hike,Excursion,,,2 hours,,None,False,False
+HRS-HVG1,The North Cape (Signature),Excursion,1790,EUR,3 hours,Level 1: Easy - suitable for most people,Nature,False,False
+HRS-HVG2,North Cape and King Crab Experience,Excursion,2790,EUR,6-7 hours,Level 1: Easy - suitable for most people,Food,False,False
+HRS-HVG3,Birdwatching Safari & The North Cape,Excursion,2990,EUR,5 hours 30 minutes  ,,Active,False,False
+HRS-HVG4,Quad Biking to North Cape,Excursion,3390,EUR,4 hours 30 minutes,Level 3: Active - good mobility needed,Active,False,False
+HRS-HVG6,RIB & King Crab Experience,Excursion,2790,EUR,3 hours 30 minutes,,Food,False,False
+HRS-HVG7,Arctic Ice Fishing,Excursion,3390,EUR,2 hours 30 minutes,Level 3: Active - good mobility needed,Active,False,False
+HRS-KOP1,Viking Tour by Bus,Excursion,1390,EUR,2 hours 25 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HRS-KOP3,Viking Experience by RIB,Excursion,3090,EUR,2 hours 40 minutes,Level 3: Active - good mobility needed,Active,False,False
+HRS-KOP4,Karmøy’s Coastal Charms,Excursion,1490,,,,Culture,False,False
+HRS-KRS1,Kristiansand WWII History Tour,Excursion,1190,EUR,2 hours 30 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HRS-KRS2,Green Walking Tour of Kristiansand,Excursion,530,EUR,2 hours,Level 1: Easy - suitable for most people,Active,False,False
+HRS-KRS3,Norwegian Christmas at Skraastad Farm,Excursion,1790,EUR,2 hours 30 minutes,Level 1: Easy - suitable for most people,Culture|Food,False,False
+HRS-LYR1,Svalbard Wilderness and History Experience,Excursion,1590,EUR,3 hours,Level 2: Moderate - some mobility needed,Active,False,False
+HRS-LYR2,Dog Sledding on Wheels,Excursion,3090,EUR,4 hours,Level 3: Active - good mobility needed,Active,False,False
+HRS-LYR4,Husky Dog Wagon Ride,Excursion,2490,EUR,3 hours  ,Level 2: Moderate - some mobility needed,Active,False,False
+HRS-LYR5,Isfjord Safari by Open Boat,Excursion,1550,EUR,3 hours,Level 3: Active - good mobility needed,Active,False,False
+HRS-LYR6,Longyearbyen by E-bike,Excursion,1390,EUR,3 hours,Level 3: Active - good mobility needed,Active,False,False
+HRS-LYR7,Svalbard Hike and Fossil Hunt,Excursion,1390,EUR,3 hours,Level 4: Challenging - good mobility and fitness needed,Active,False,False
+HRS-NVK1,Wonders of Wildlife at Polar Park,Excursion,2294,NOK,4 hours 15 minutes,,Nature,False,False
+HRS-NVK3,Self-Drive Dogsled Adventure,Excursion,3908,NOK,3 hours 30 minutes,,None|Active,False,False
+HRS-NVK4,Sámi Cultural Encounter,Excursion,1833,NOK,3 hours 30 minutes ,,Culture,False,False
+HRS-NVK5,Snowshoe Trek with Panoramic Views,Excursion,1833,NOK,3 hours,,Active,False,False
+HRS-NVK6,The Arctic Train,Excursion,890,,3 hours,,Culture,False,False
+HRS-REI1,Reine & Lofoten Scenery,Excursion,1990,,5 hours ,,None,False,False
+HRS-REI2,Kayaking in Reine,Excursion,1990,EUR,3 hours,,Active,False,False
+HRS-RVK1,Time Travel through the Coastal Town of Rørvik,Excursion,790,EUR,2 hours,Level 2: Moderate - some mobility needed,Culture,False,False
+HRS-RVK2,Nærøya: The island of the Gods,Excursion,2390,EUR,3 hours,Level 2: Moderate - some mobility needed,Culture,False,False
+HRS-SAE1,Hidden treasures of the Hjørundfjord,Excursion,1990,EUR,4 hours 40 minutes ,,None,False,False
+HRS-SAE2,Hike in Urke Valley,Excursion,1490,EUR,3 hours 10 minutes,Level 4: Challenging - good mobility and fitness needed,Active|Nature,False,False
+HRS-SVG1,On the trail of the Vikings,Excursion,1090,EUR,3 hours ,,Active,False,False
+HRS-SVG2,Walking tour in the old town of Stavanger,Excursion,790,EUR,2 hours 30 minutes ,,Active|Culture,False,False
+HRS-SVJ1,Lofoten Scenery & Henningsvær - winter,Excursion,1490,EUR,2 hours 30 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HRS-SVJ2,Fishing in Lofoten - Summer,Excursion,1990,EUR,3 hours 15 minutes,Level 2: Moderate - some mobility needed,Nature,False,False
+HRS-SVJ3,Kayaking in Lofoten - Winter,Excursion,1990,EUR,2 hours 30 minutes,Level 4: Challenging - good mobility and fitness needed,Active,False,False
+HRS-SVJ4,Lofoten RIB & Sea Eagle Adventure,Excursion,1590,EUR,1 hour 30 minutes  ,Level 3: Active - good mobility needed,None,False,False
+HRS-SVJ5,Lofoten Scenery & Henningsvær - Summer,Excursion,1490,EUR,2 hours 30 minutes,Level 1: Easy - suitable for most people,None|Nature,False,False
+HRS-TOR1,Senja Scenic Route by Bus,Excursion,1590,,3 hours ,,None,False,False
+HRS-TOR2,Scenic Guided E-bike Tour,Excursion,1790,EUR,2 hours 30 minutes,Level 4: Challenging - good mobility and fitness,Active,False,False
+HRS-TOR3,Senja Wildlife Safari,Excursion,3150,EUR,2h 45min,Level 2: Moderate - some mobility needed,Nature,False,False
+HRS-TOR4,Fjord Adventure by RIB,Excursion,1790,EUR,2 hours,Level 2: Moderate - some mobility needed,Active,False,False
+HRS-TOS1,"Tromsø, The Arctic Capital",Excursion,1690,EUR,3 hours 30 minutes,Level 1: Easy - suitable for most people,Culture,False,False
+HRS-TOS2,Tromsø On Foot – The City & Its Polar History,Excursion,890,EUR,3.5 hours,Level 2: Moderate - some mobility needed,Culture,False,False
+HRS-TOS3,Explore Tromsø by E-bike  (summer),Excursion,1790,EUR,3 hours,Level 3: Active - good mobility needed,Active,False,False
+HRS-TOS5,The Northernmost Brewery,Excursion,1290,EUR,1 hour 30 minutes,Level 2: Moderate - some mobility needed,Food,False,False
+HRS-TOS6,Cross-country skiing in Tromsø,Excursion,1290,EUR,3 hours,Level 3: Active - good mobility needed,Active,False,False
+HRS-TOS8,Dog Sledding in Winter Wonderland,Excursion,3390,EUR,3 hours 30 minutes,Level 3: Active - good mobility needed,Active,False,False
+HRS-TRN1,"Træna Culture Walk – Poetry, Art, and Heritage",Excursion,1090,EUR,2 hours 30 minutes,Level 2: Moderate - some mobility needed,Culture,False,False
+HRS-TRN2,Arctic Dip – Sauna & Swim,Excursion,1290,EUR,1 hour 30 minutes,Level 3: Active - good mobility needed,Nature|Active|Culture,False,False
+HRS-TRN3,Træna Island Hopping,Excursion,3490,EUR,3 hours,Level 2: Moderate - some mobility needed,Nature,False,False
+INCL-AES3,Ålesund - The Norwegian Aquarium,Pre-programme,,EUR,2 hours ,Level 2: Moderate - some mobility needed,None,True,False
+INCL-ALF2,Experience the Northern Lights Cathedral,Excursion,,EUR,1.5 hours,Level 2: Moderate - some mobility needed,Culture,True,True
+INCL-EGE1,Guided Town Walk (OLD),Excursion,,EUR,1hr30,Level 2: Moderate - some mobility needed,None,True,False
+INCL-FLM1,Flåm - Stegastein Viewpoint (OLD),Excursion,,EUR,30 minutes scenic drive each way,Level 1: Easy - suitable for most people,Nature,True,False
+INCL-HVG1,Honningsvåg - The North Cape,Pre-Post-programme,,EUR,3 hours,Level 1: Easy - suitable for most people,Nature,True,False
+INCL-REI1,Reine - The Fishing Village of Å,Excursion,,EUR,1-2 hours,Level 2: Moderate - some mobility needed,Culture,True,False
+INCL-TOS4,The Polar Museum,Excursion,,EUR,At guests’ discretion,Level 2: Moderate - some mobility needed,None,True,False
+KKN1A,Snowhotel – A Unique Winter Experience,Pre-Post-programme,2500,EUR,2 days,Level 1: Easy - suitable for most people added,None,False,False
+KKN2,Gamme Cabins by Kirkenes Snowhotel,Pre-Post-programme,2600,EUR,2 days,Level 1: Easy - suitable for most people added,None,False,False
+"N1400KL2,NINBB1400WI",Norway in a Nutshell | 1 day  ,Pre-Post-programme,2750,EUR,9 hours,Level 1: Easy - suitable for most people added,Nature,False,False
+"N1404KL2OBFLAM, CENNINBBFLSU24, CENNINBBFLWI24, CENNINBBFLWI25",Norway in a Nutshell | Overnight Flåm,Pre-Post-programme,4650,EUR,2 days,Level 1: Easy - suitable for most people added,Nature,False,False
+"N1404KL2OBFLVO, CENNINBOVFWI25, CENNINOBFVWI25, CENNINBOVFSU25, CENNINOBFVSU25","Norway In A Nutshell  | 3 days Flåm and Voss (N1404KL2OBFLVO, CENNINBOVFWI25, CENNINOBFVWI25)",Pre-Post-programme,8891,EUR,3 days,Level 1: Easy - suitable for most people,Nature,False,False
+"N1404KL2OBVOSS, CENNINBBVOSU24, CENNINBBVOWI24",Norway in a Nutshell | Overnight Voss,Pre-Post-programme,4800,EUR,2 days,Level 1: Easy - suitable for most people added,Nature,False,False

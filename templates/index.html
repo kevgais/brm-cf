@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contentful Content Model Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+    <div class="nav-container">
+        <a href="#" class="nav-brand">Contentful <span>Explorer</span></a>
+        <ul class="nav-links">
+            <li><a href="#data-model">Data Model</a></li>
+            <li><a href="#ships">Ships</a></li>
+            <li><a href="#cabins">Cabins</a></li>
+            <li><a href="#ports">Ports</a></li>
+            <li><a href="#excursions">Excursions</a></li>
+            <li><a href="#voyages">Voyages</a></li>
+            <li><a href="#locales">Locales</a></li>
+            <li><a href="#gaps">Gaps</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <h1>Contentful <span class="gradient">Content Model</span></h1>
+        <p class="subtitle">
+            The Rosetta Stone between Contentful CMS and Salesforce Data Cloud booking data.
+            Every code, ID, and relationship in one place.
+        </p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">{{ stats.ships }}</div>
+                <div class="stat-label">Ships</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ stats.cabins }}</div>
+                <div class="stat-label">Cabin Types</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ stats.ports }}</div>
+                <div class="stat-label">Ports</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ stats.excursions }}</div>
+                <div class="stat-label">Excursions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ stats.voyage_products }}</div>
+                <div class="stat-label">Voyage Products</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ stats.locales }}</div>
+                <div class="stat-label">Locales</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 1. Data Model Diagram -->
+<section class="section" id="data-model">
+    <div class="container">
+        <div class="section-label">01 / Data Model</div>
+        <h2>How Everything Connects</h2>
+        <p class="section-desc">
+            When a booking comes in from Salesforce Data Cloud, here's how each piece maps to Contentful content.
+            The left column shows what's in the booking, the right shows what's in the CMS.
+        </p>
+
+        <div class="diagram-container">
+            <div class="diagram-grid">
+                <!-- Left: Data Cloud / Booking -->
+                <div class="diagram-col">
+                    <div class="entity-box">
+                        <h4><span class="entity-icon" style="background: var(--accent-blue)"></span> Booking Order</h4>
+                        <div class="fields">
+                            <span class="key">booking_id</span> (e.g. 2113259)<br>
+                            <span class="key">ship_code</span> (e.g. "TF")<br>
+                            <span class="key">cabin_code</span> (e.g. "U2D")<br>
+                            <span class="key">voyage_code</span> (e.g. "TF250723")<br>
+                            <span class="key">market_code</span> (e.g. "UK")
+                        </div>
+                    </div>
+                    <div class="entity-box">
+                        <h4><span class="entity-icon" style="background: var(--accent-green)"></span> Sailing Line</h4>
+                        <div class="fields">
+                            <span class="key">port_from</span> (e.g. "BGO")<br>
+                            <span class="key">port_to</span> (e.g. "TOS")<br>
+                            departure_date<br>
+                            arrival_date
+                        </div>
+                    </div>
+                    <div class="entity-box">
+                        <h4><span class="entity-icon" style="background: var(--accent-purple)"></span> Excursion Line</h4>
+                        <div class="fields">
+                            <span class="key">excursion_code</span> (e.g. "HR-TOS1")<br>
+                            port<br>
+                            date
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center: Mapping Arrows -->
+                <div class="diagram-center">
+                    <div class="diagram-arrow">ship_code ------></div>
+                    <div class="diagram-arrow" style="margin-top: 30px">cabin_code ------></div>
+                    <div class="diagram-arrow" style="margin-top: 36px">voyage_code ----></div>
+                    <div class="diagram-arrow" style="margin-top: 10px">port_from ------></div>
+                    <div class="diagram-arrow" style="margin-top: 24px">excursion_code -></div>
+                    <div class="diagram-arrow" style="margin-top: 10px">market_code ---></div>
+                </div>
+
+                <!-- Right: Contentful -->
+                <div class="diagram-col">
+                    <div class="entity-box">
+                        <h4><span class="entity-icon" style="background: var(--accent-cyan)"></span> shipPage</h4>
+                        <div class="fields">
+                            <span class="key">contentful_id</span> (e.g. "ship_TF")<br>
+                            title, slug, images<br>
+                            linked cabin entries
+                        </div>
+                    </div>
+                    <div class="entity-box">
+                        <h4><span class="entity-icon" style="background: var(--accent-cyan)"></span> cabin</h4>
+                        <div class="fields">
+                            <span class="key">cabin_code</span> (e.g. "U2D")<br>
+                            name, category, size<br>
+                            bed_type, window_type
+                        </div>
+                    </div>
+                    <div class="entity-box">
+                        <h4><span class="entity-icon" style="background: var(--accent-cyan)"></span> voyagePage</h4>
+                        <div class="fields">
+                            <span class="key">product_code</span> (e.g. "CENTFOTWI25")<br>
+                            title, route, season<br>
+                            category, alternate codes
+                        </div>
+                    </div>
+                    <div class="entity-box">
+                        <h4><span class="entity-icon" style="background: var(--accent-cyan)"></span> portPage</h4>
+                        <div class="fields">
+                            <span class="key">contentful_id</span> (no port codes)<br>
+                            name, images, highlights
+                        </div>
+                    </div>
+                    <div class="entity-box">
+                        <h4><span class="entity-icon" style="background: var(--accent-cyan)"></span> excursionAndProgramme</h4>
+                        <div class="fields">
+                            <span class="key">bookingCode</span> (e.g. "HR-TOS1")<br>
+                            title, type, price<br>
+                            duration, difficulty
+                        </div>
+                    </div>
+                    <div class="entity-box">
+                        <h4><span class="entity-icon" style="background: var(--accent-cyan)"></span> Locale Config</h4>
+                        <div class="fields">
+                            <span class="key">market_code</span> -> locale<br>
+                            e.g. "UK" -> "en-GB"<br>
+                            10 market/locale pairs
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. Ships -->
+<section class="section" id="ships">
+    <div class="container">
+        <div class="section-label">02 / Ships</div>
+        <h2>Fleet ({{ stats.ships }} Ships)</h2>
+        <p class="section-desc">
+            {{ stats.ships_with_content }} of {{ stats.ships }} ships have Contentful content.
+            MS Maud has no CMS content. Ship codes (KH, TF, etc.) map to contentful_id format "ship_XX".
+        </p>
+
+        <div class="search-bar">
+            <input type="text" id="search-ships" class="search-input" placeholder="Search ships...">
+        </div>
+        <div id="count-ships" class="result-count">{{ stats.ships }} total</div>
+
+        <div class="data-table-wrapper">
+            <table class="data-table" id="table-ships">
+                <thead>
+                    <tr>
+                        <th>BRM Code</th>
+                        <th>Ship Name</th>
+                        <th>Contentful ID</th>
+                        <th>Slug</th>
+                        <th>Cabins</th>
+                        <th>Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ship in ships %}
+                    <tr>
+                        <td class="code">{{ ship.brm_code }}</td>
+                        <td>{{ ship.ship_name }}</td>
+                        <td class="id">{{ ship.contentful_id or '---' }}</td>
+                        <td class="code">{{ ship.slug }}</td>
+                        <td>{{ cabins_by_ship.get(ship.brm_code, [])|length }}</td>
+                        <td>
+                            {% if ship.has_contentful_content == 'True' %}
+                                <span class="badge badge-green">Yes</span>
+                            {% else %}
+                                <span class="badge badge-red">No</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Cabins -->
+<section class="section" id="cabins">
+    <div class="container">
+        <div class="section-label">03 / Cabins</div>
+        <h2>Cabin Types ({{ stats.cabins }} Total)</h2>
+        <p class="section-desc">
+            Cabins are ship-specific - a "U2D" on MS Trollfjord is different from "U2D" on MS Nordkapp.
+            {{ stats.cabin_categories }} categories: Expedition Suite, Arctic Superior, Polar Outside, Polar Inside.
+        </p>
+
+        <div class="ship-tabs">
+            <button class="ship-tab active" data-ship="all">All Ships</button>
+            {% for ship in ships %}
+            <button class="ship-tab" data-ship="{{ ship.brm_code }}">{{ ship.brm_code }}</button>
+            {% endfor %}
+        </div>
+
+        {% for ship_code, ship_cabins in cabins_by_ship.items() %}
+        <div class="cabin-ship-group" data-ship="{{ ship_code }}" style="margin-bottom: 24px;">
+            <h3 style="font-size: 16px; color: var(--text-secondary); margin-bottom: 12px;">
+                {{ stats.ships_by_code.get(ship_code, ship_code) }}
+                <span style="color: var(--text-muted); font-size: 13px;">({{ ship_cabins|length }} cabin types)</span>
+            </h3>
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Bed Type</th>
+                            <th>Window</th>
+                            <th>Size (m2)</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cabin in ship_cabins %}
+                        <tr>
+                            <td class="code">{{ cabin.cabin_code }}</td>
+                            <td>{{ cabin.cabin_name }}</td>
+                            <td>
+                                {% if cabin.cabin_category == 'Expedition Suite' %}
+                                    <span class="badge badge-purple">{{ cabin.cabin_category }}</span>
+                                {% elif cabin.cabin_category == 'Arctic Superior' %}
+                                    <span class="badge badge-blue">{{ cabin.cabin_category }}</span>
+                                {% elif cabin.cabin_category == 'Polar Outside' %}
+                                    <span class="badge badge-green">{{ cabin.cabin_category }}</span>
+                                {% else %}
+                                    <span class="badge badge-yellow">{{ cabin.cabin_category }}</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ cabin.bed_type }}</td>
+                            <td>{{ cabin.window_type }}</td>
+                            <td>{{ cabin.size_from }}{% if cabin.size_to and cabin.size_to != cabin.size_from %}-{{ cabin.size_to }}{% endif %}</td>
+                            <td>
+                                <button class="expand-btn" data-target="cabin-{{ ship_code }}-{{ loop.index }}">Details</button>
+                            </td>
+                        </tr>
+                        <tr class="expand-row" id="cabin-{{ ship_code }}-{{ loop.index }}">
+                            <td colspan="7">
+                                <div class="expand-detail">
+                                    <div class="detail-item">
+                                        <div class="detail-label">Ship</div>
+                                        <div class="detail-value">{{ cabin.ship_name }}</div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <div class="detail-label">Balcony</div>
+                                        <div class="detail-value">{{ 'Yes' if cabin.has_balcony == 'True' else 'No' }}</div>
+                                    </div>
+                                    <div class="detail-item" style="grid-column: 1 / -1;">
+                                        <div class="detail-label">Description</div>
+                                        <div class="detail-value">{{ cabin.cabin_description }}</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- 4. Ports -->
+<section class="section" id="ports">
+    <div class="container">
+        <div class="section-label">04 / Ports</div>
+        <h2>Ports of Call ({{ stats.ports }})</h2>
+        <p class="section-desc">
+            Contentful stores ports as "portPage" entries with a name and contentful_id.
+            There are no 3-letter port codes (like BGO, TOS) in the CMS - matching to booking data
+            requires a name-based lookup or a separate mapping table.
+        </p>
+
+        <div class="search-bar">
+            <input type="text" id="search-ports" class="search-input" placeholder="Search ports...">
+        </div>
+        <div id="count-ports" class="result-count">{{ stats.ports }} total</div>
+
+        <div class="data-table-wrapper">
+            <table class="data-table" id="table-ports">
+                <thead>
+                    <tr>
+                        <th>Port Name</th>
+                        <th>Contentful ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for port in ports %}
+                    <tr>
+                        <td>{{ port.port_name }}</td>
+                        <td class="id" style="max-width: none;">{{ port.contentful_id }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- 5. Excursions -->
+<section class="section" id="excursions">
+    <div class="container">
+        <div class="section-label">05 / Excursions</div>
+        <h2>Excursions & Programmes ({{ stats.excursions }})</h2>
+        <p class="section-desc">
+            Excursions use a "bookingCode" field (e.g. HR-TOS1) that directly matches
+            the excursion codes in booking data. This is the cleanest join in the model.
+            Types: {{ stats.excursion_types | join(', ') }}.
+        </p>
+
+        <div class="search-bar">
+            <input type="text" id="search-excursions" class="search-input" placeholder="Search excursions...">
+            <select id="filter-excursions" class="filter-select">
+                <option value="">All Types</option>
+                {% for t in stats.excursion_types %}
+                <option value="{{ t }}">{{ t }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div id="count-excursions" class="result-count">{{ stats.excursions }} total</div>
+
+        <div class="data-table-wrapper" style="max-height: 600px; overflow-y: auto;">
+            <table class="data-table" id="table-excursions">
+                <thead>
+                    <tr>
+                        <th>Booking Code</th>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th>Duration</th>
+                        <th>Difficulty</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for exc in excursions %}
+                    <tr data-filter="{{ exc.type }}">
+                        <td class="code">{{ exc.booking_code }}</td>
+                        <td>{{ exc.title }}</td>
+                        <td>
+                            {% if exc.type == 'Excursion' %}
+                                <span class="badge badge-blue">{{ exc.type }}</span>
+                            {% elif exc.type == 'Pre-programme' %}
+                                <span class="badge badge-green">{{ exc.type }}</span>
+                            {% elif exc.type == 'Pre-Post-programme' %}
+                                <span class="badge badge-purple">{{ exc.type }}</span>
+                            {% else %}
+                                <span class="badge badge-yellow">{{ exc.type }}</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ exc.duration }}</td>
+                        <td style="font-size: 12px; color: var(--text-secondary);">{{ exc.difficulty_level[:30] if exc.difficulty_level else '---' }}</td>
+                        <td>
+                            <button class="expand-btn" data-target="exc-{{ loop.index }}">Details</button>
+                        </td>
+                    </tr>
+                    <tr class="expand-row" id="exc-{{ loop.index }}">
+                        <td colspan="6">
+                            <div class="expand-detail">
+                                <div class="detail-item">
+                                    <div class="detail-label">Price</div>
+                                    <div class="detail-value">{{ exc.price }} {{ exc.currency }}</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Categories</div>
+                                    <div class="detail-value">{{ exc.categories or '---' }}</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Included</div>
+                                    <div class="detail-value">{{ 'Yes' if exc.is_included == 'True' else 'No' }}</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Guest Favourite</div>
+                                    <div class="detail-value">{{ 'Yes' if exc.guest_favourite == 'True' else 'No' }}</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Full Difficulty</div>
+                                    <div class="detail-value">{{ exc.difficulty_level or '---' }}</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- 6. Voyage Products -->
+<section class="section" id="voyages">
+    <div class="container">
+        <div class="section-label">06 / Voyage Products</div>
+        <h2>Voyage Products ({{ stats.voyage_products }})</h2>
+        <p class="section-desc">
+            Voyages in Contentful use "product codes" (like CENTFOTWI25) that are different from
+            the sailing codes in booking data (like TF250723). Matching requires a lookup.
+            Some short voyages have no product code at all.
+        </p>
+
+        <div class="search-bar">
+            <input type="text" id="search-voyage-products" class="search-input" placeholder="Search voyages...">
+            <select id="filter-voyage-products" class="filter-select">
+                <option value="">All Categories</option>
+                {% for cat in stats.voyage_categories %}
+                <option value="{{ cat }}">{{ cat }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div id="count-voyage-products" class="result-count">{{ stats.voyage_products }} total</div>
+
+        <div class="data-table-wrapper" style="max-height: 600px; overflow-y: auto;">
+            <table class="data-table" id="table-voyage-products">
+                <thead>
+                    <tr>
+                        <th>Product Code</th>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th>Route</th>
+                        <th>Season</th>
+                        <th>Category</th>
+                        <th>Contentful ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for vp in voyage_products %}
+                    <tr data-filter="{{ vp.category }}">
+                        <td class="code">{{ vp.product_code or '---' }}</td>
+                        <td>{{ vp.title }}</td>
+                        <td>
+                            {% if vp.voyage_type == 'Classic' %}
+                                <span class="badge badge-blue">{{ vp.voyage_type }}</span>
+                            {% else %}
+                                <span class="badge badge-cyan">{{ vp.voyage_type }}</span>
+                            {% endif %}
+                        </td>
+                        <td style="font-size: 13px; color: var(--text-secondary);">{{ vp.route_description }}</td>
+                        <td style="font-size: 12px;">{{ vp.season }}</td>
+                        <td style="font-size: 12px; color: var(--text-secondary);">{{ vp.category }}</td>
+                        <td class="id">{{ vp.contentful_id }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- 7. Locales -->
+<section class="section" id="locales">
+    <div class="container">
+        <div class="section-label">07 / Locales</div>
+        <h2>Market Locales ({{ stats.locales }})</h2>
+        <p class="section-desc">
+            Each market code from booking data maps to a Contentful locale.
+            Content is localised per market - requesting "en-GB" returns UK content,
+            "de-DE" returns German content. Booking codes are stored in the default locale (en) only.
+        </p>
+
+        <div class="locale-grid">
+            {% set flags = {'AT': '🇦🇹', 'AU': '🇦🇺', 'CH': '🇨🇭', 'DE': '🇩🇪', 'DK': '🇩🇰', 'FR': '🇫🇷', 'NO': '🇳🇴', 'SE': '🇸🇪', 'UK': '🇬🇧', 'US': '🇺🇸'} %}
+            {% set names = {'AT': 'Austria', 'AU': 'Australia', 'CH': 'Switzerland', 'DE': 'Germany', 'DK': 'Denmark', 'FR': 'France', 'NO': 'Norway', 'SE': 'Sweden', 'UK': 'United Kingdom', 'US': 'United States'} %}
+            {% for locale in locales %}
+            <div class="locale-card">
+                <div class="locale-flag">{{ flags.get(locale.market_code, '') }}</div>
+                <div class="locale-info">
+                    <div class="locale-code">{{ locale.market_code }} -> {{ locale.contentful_locale }}</div>
+                    <div class="locale-name">{{ names.get(locale.market_code, locale.market_code) }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- 8. Known Gaps -->
+<section class="section" id="gaps">
+    <div class="container">
+        <div class="section-label">08 / Known Gaps</div>
+        <h2>Integration Gotchas</h2>
+        <p class="section-desc">
+            These are the things that will trip you up when connecting Data Cloud bookings to Contentful content.
+        </p>
+
+        <div class="gaps-grid">
+            <div class="gap-card" style="border-left-color: var(--accent-red);">
+                <h4>
+                    <span class="severity" style="color: var(--accent-red);">High</span>
+                    Voyage Code Mismatch
+                </h4>
+                <p>
+                    Booking sailing codes (e.g. "TF250723") are completely different from Contentful
+                    product codes (e.g. "CENTFOTWI25"). There is no direct lookup - you need a
+                    separate mapping table or fuzzy matching on route + ship + season.
+                </p>
+            </div>
+            <div class="gap-card" style="border-left-color: var(--accent-red);">
+                <h4>
+                    <span class="severity" style="color: var(--accent-red);">High</span>
+                    No Port Codes in Contentful
+                </h4>
+                <p>
+                    Booking data uses 3-letter port codes (BGO, TOS, KKN). Contentful has no port
+                    codes at all - only port names and contentful_ids. You need a hand-maintained
+                    mapping table (port code -> contentful_id).
+                </p>
+            </div>
+            <div class="gap-card" style="border-left-color: var(--accent-yellow);">
+                <h4>
+                    <span class="severity" style="color: var(--accent-yellow);">Medium</span>
+                    Booking Codes in Default Locale Only
+                </h4>
+                <p>
+                    The "bookingCode" field on excursions is only stored in the default locale (en).
+                    When querying with a non-English locale, you must also request the default locale
+                    to get the matching code.
+                </p>
+            </div>
+            <div class="gap-card" style="border-left-color: var(--accent-yellow);">
+                <h4>
+                    <span class="severity" style="color: var(--accent-yellow);">Medium</span>
+                    MS Maud Has No Content
+                </h4>
+                <p>
+                    Ship code "MS" (MS Maud) exists in booking data but has no corresponding
+                    content in Contentful. Any booking on MS Maud will return empty for ship
+                    details, cabin info, and ship images.
+                </p>
+            </div>
+            <div class="gap-card">
+                <h4>
+                    <span class="severity" style="color: var(--accent-blue);">Info</span>
+                    Ship-Specific Cabin Codes
+                </h4>
+                <p>
+                    Cabin code "U2D" means different things on different ships. A cabin lookup
+                    must always include both the ship code AND cabin code. Never look up a
+                    cabin by code alone.
+                </p>
+            </div>
+            <div class="gap-card">
+                <h4>
+                    <span class="severity" style="color: var(--accent-blue);">Info</span>
+                    Short Voyages Lack Product Codes
+                </h4>
+                <p>
+                    21 of {{ stats.voyage_products }} voyage products are short voyages without any
+                    product code. These can only be matched by title and route description,
+                    not by a clean code lookup.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>
+            Contentful Content Model Explorer &middot;
+            Data sourced from Contentful CMS exports &middot;
+            Built for the Data Cloud integration team
+        </p>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
