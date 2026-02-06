@@ -397,6 +397,55 @@
             Types: {{ stats.excursion_types | join(', ') }}.
         </p>
 
+        <!-- Seasonal Variants Callout -->
+        <div class="callout callout-warning" style="margin-bottom: 24px;">
+            <h4 style="margin: 0 0 8px 0; color: var(--accent-yellow);">Seasonal Variants: 4 codes have summer/winter versions</h4>
+            <p style="margin: 0 0 12px 0; color: var(--text-secondary); font-size: 14px;">
+                These booking codes each have <strong>two Contentful entries</strong> with different content,
+                durations, and sometimes prices depending on season. The seasons overlap in Spring and Autumn,
+                so you need the sailing date to pick the right version.
+            </p>
+            <table class="data-table" style="margin: 0;">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Summer Version</th>
+                        <th>Winter Version</th>
+                        <th>Overlap</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="code">HRS-HVG2</td>
+                        <td>North Cape & King Crab (5 hrs)</td>
+                        <td>North Cape & King Crab (6-7 hrs)</td>
+                        <td><span class="badge badge-yellow">Spring, Autumn, Winter</span></td>
+                    </tr>
+                    <tr>
+                        <td class="code">HRS-SVJ2</td>
+                        <td>Fishing in Lofoten (3h15, 1990 NOK)</td>
+                        <td>Fishing in Lofoten (2h45, 1790 NOK)</td>
+                        <td><span class="badge badge-yellow">Spring, Autumn</span></td>
+                    </tr>
+                    <tr>
+                        <td class="code">HRS-SVJ3</td>
+                        <td>Kayaking in Lofoten (3 hrs)</td>
+                        <td>Kayaking in Lofoten (2h30)</td>
+                        <td><span class="badge badge-yellow">Spring, Autumn</span></td>
+                    </tr>
+                    <tr>
+                        <td class="code">HRS-TOS3</td>
+                        <td>Troms&oslash; E-bike (1790 NOK)</td>
+                        <td>Troms&oslash; E-bike Autumn (1590 NOK)</td>
+                        <td><span class="badge badge-yellow">Spring, Summer, Autumn</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin: 8px 0 0 0; color: var(--text-tertiary); font-size: 13px;">
+                Rule of thumb: Jun-Aug = summer slug, Nov-Mar = winter slug, Apr-May &amp; Sep-Oct = default to summer.
+            </p>
+        </div>
+
         <div class="search-bar">
             <input type="text" id="search-excursions" class="search-input" placeholder="Search excursions...">
             <select id="filter-excursions" class="filter-select">
@@ -415,6 +464,7 @@
                         <th>Booking Code</th>
                         <th>Title</th>
                         <th>Type</th>
+                        <th>Seasons</th>
                         <th>Duration</th>
                         <th>Difficulty</th>
                         <th></th>
@@ -436,6 +486,15 @@
                                 <span class="badge badge-yellow">{{ exc.type }}</span>
                             {% endif %}
                         </td>
+                        <td style="font-size: 12px; color: var(--text-secondary);">
+                            {% if exc.seasons %}
+                                {% for s in exc.seasons.split(' | ') %}
+                                    <span class="badge badge-{% if 'Summer' in s %}blue{% elif 'Winter' in s %}purple{% elif 'Spring' in s %}green{% else %}yellow{% endif %}" style="font-size: 10px; padding: 1px 6px; margin: 1px 0;">{{ s.split(' (')[0] }}</span>
+                                {% endfor %}
+                            {% else %}
+                                <span style="color: var(--text-tertiary);">---</span>
+                            {% endif %}
+                        </td>
                         <td>{{ exc.duration }}</td>
                         <td style="font-size: 12px; color: var(--text-secondary);">{{ exc.difficulty_level[:30] if exc.difficulty_level else '---' }}</td>
                         <td>
@@ -443,28 +502,37 @@
                         </td>
                     </tr>
                     <tr class="expand-row" id="exc-{{ loop.index }}">
-                        <td colspan="6">
+                        <td colspan="7">
                             <div class="expand-detail">
                                 <div class="detail-item">
                                     <div class="detail-label">Price</div>
                                     <div class="detail-value">{{ exc.price }} {{ exc.currency }}</div>
                                 </div>
                                 <div class="detail-item">
+                                    <div class="detail-label">Seasons</div>
+                                    <div class="detail-value">{{ exc.seasons.replace(' | ', ', ') if exc.seasons else 'All year' }}</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Valid Years</div>
+                                    <div class="detail-value">{{ exc.years.replace(' | ', ', ') if exc.years else '---' }}</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Slug</div>
+                                    <div class="detail-value code">{{ exc.slug or '---' }}</div>
+                                </div>
+                                <div class="detail-item">
                                     <div class="detail-label">Categories</div>
                                     <div class="detail-value">{{ exc.categories or '---' }}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">Included</div>
-                                    <div class="detail-value">{{ 'Yes' if exc.is_included == 'True' else 'No' }}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">Guest Favourite</div>
-                                    <div class="detail-value">{{ 'Yes' if exc.guest_favourite == 'True' else 'No' }}</div>
                                 </div>
                                 <div class="detail-item">
                                     <div class="detail-label">Full Difficulty</div>
                                     <div class="detail-value">{{ exc.difficulty_level or '---' }}</div>
                                 </div>
+                                {% if exc.slug %}
+                                <div class="detail-item" style="grid-column: 1 / -1;">
+                                    <a href="https://www.hurtigruten.com/en/extras/excursions/{{ exc.slug }}" target="_blank" class="result-link" style="display: inline-block;">View on hurtigruten.com</a>
+                                </div>
+                                {% endif %}
                             </div>
                         </td>
                     </tr>
@@ -582,15 +650,15 @@
                     separate mapping table or fuzzy matching on route + ship + season.
                 </p>
             </div>
-            <div class="gap-card" style="border-left-color: var(--accent-red);">
+            <div class="gap-card" style="border-left-color: var(--accent-yellow);">
                 <h4>
-                    <span class="severity" style="color: var(--accent-red);">High</span>
-                    No Port Codes in Contentful
+                    <span class="severity" style="color: var(--accent-yellow);">Resolved</span>
+                    Port Codes Now Mapped
                 </h4>
                 <p>
-                    Booking data uses 3-letter port codes (BGO, TOS, KKN). Contentful has no port
-                    codes at all - only port names and contentful_ids. You need a hand-maintained
-                    mapping table (port code -> contentful_id).
+                    Booking data uses 3-letter port codes (BGO, TOS, KKN). Contentful stores port names
+                    and slugs but not these codes directly. We built a mapping table (port code -> contentful_id)
+                    with 99.3% match rate. Only a handful of minor ports remain unmapped.
                 </p>
             </div>
             <div class="gap-card" style="border-left-color: var(--accent-yellow);">
@@ -606,13 +674,26 @@
             </div>
             <div class="gap-card" style="border-left-color: var(--accent-yellow);">
                 <h4>
-                    <span class="severity" style="color: var(--accent-yellow);">Medium</span>
-                    MS Maud Has No Content
+                    <span class="severity" style="color: var(--accent-yellow);">Resolved</span>
+                    MS Maud = MS Midnatsol (Alias WW)
                 </h4>
                 <p>
-                    Ship code "MS" (MS Maud) exists in booking data but has no corresponding
-                    content in Contentful. Any booking on MS Maud will return empty for ship
-                    details, cabin info, and ship images.
+                    Ship code "MS" (MS Maud) is the same ship as MS Midnatsol, renamed.
+                    Contentful stores all cabin and deck content under ship code "WW".
+                    Lookups now use alias mapping: MS -> WW. Deck plans in CF confirm this
+                    with titles like "MS Maud(WW)".
+                </p>
+            </div>
+            <div class="gap-card" style="border-left-color: var(--accent-red);">
+                <h4>
+                    <span class="severity" style="color: var(--accent-red);">High</span>
+                    Seasonal Excursion Variants
+                </h4>
+                <p>
+                    4 booking codes (HRS-HVG2, HRS-SVJ2, HRS-SVJ3, HRS-TOS3) have both summer
+                    and winter versions in Contentful with different durations, prices, and slugs.
+                    In Spring (Apr-May) and Autumn (Sep-Oct) BOTH variants are valid - the booking
+                    code alone cannot disambiguate which content to show.
                 </p>
             </div>
             <div class="gap-card">
